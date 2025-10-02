@@ -20,7 +20,7 @@ with base as (
     totalfeelamount                                as totalfeeamount, 
     bid,
     buid
-  from DBTPOC.raw.maxamountavailable
+  from {{source("raw", "maxamountavailable")}}
 ),
 filtered as (
   select *
