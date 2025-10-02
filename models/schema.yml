@@ -1,0 +1,40 @@
+version: 2
+models:
+  - name: stg_employerpricing
+    description: "Cleaned employer events."
+    columns:
+      - name: bid        
+        tests: 
+          - not_null
+          - unique
+      - name: env       
+        tests:
+          - accepted_values:
+              values:
+                - dev
+                - qa
+                - staging
+                - prod
+  - name: stg_transactionswdetails
+    description: "Cleaned transactions."
+    columns:
+      - name: utdid
+        tests: [not_null, unique]
+      - name: txn_status
+        tests:
+          - accepted_values:
+              values:
+                - AUTHORIZED
+                - DECLINED
+                - SETTLED
+                - REVERSED
+                - PENDING
+      - name: transaction_amount 
+        tests: [not_null]
+  - name: stg_maxamountavailable
+    description: "Cleaned max amounts"
+    columns:
+      - name: utdid
+        tests: [not_null, unique]
+      - name: tid
+        tests: [not_null, unique]

@@ -1,0 +1,13 @@
+version: 2
+sources:
+  - name: raw
+    database: DBTPOC           # ← change if different
+    schema: raw
+    tables:
+      - name: employerpricing
+        loaded_at_field: recorddatetime
+      - name: maxamountavailable
+        loaded_at_field: transactiondate 
+      - name: transactionswdetails
+        loaded_at_field: transactiondate 
+      
