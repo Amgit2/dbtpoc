@@ -18,7 +18,7 @@ with base as (
     bid::number                                 as bid,
     buid::number                                as buid,
     lower(nullif(trim(env), ''))                as env
-  from DBTPOC.raw.transactionswdetails
+  from {{source("raw", "transactionswdetails")}}
 ),
 filtered as (
   select *
