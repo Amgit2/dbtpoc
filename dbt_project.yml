@@ -18,3 +18,5 @@ models:
   DBTPOC:
     +materialized: table
     +schema: cleaned
+tests: 
+  +store_failures: true
