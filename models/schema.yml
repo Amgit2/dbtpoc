@@ -1,4 +1,6 @@
 version: 2
+
+
 models:
   - name: stg_employerpricing
     description: "Cleaned employer events."
@@ -38,3 +40,5 @@ models:
         tests: [not_null, unique]
       - name: tid
         tests: [not_null, unique]
+      - name: employername
+        tests: [not_null]
